@@ -13,7 +13,7 @@ Building a Calculator app using React js
 
 ## Live Demo
 
-[Live Demo]()
+[Live Demo](https://react-calculator-mv-srba.herokuapp.com/)
 
 ## Getting Started
 
