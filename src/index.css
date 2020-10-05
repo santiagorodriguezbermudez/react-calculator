@@ -3,6 +3,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: 10rem auto;
+}
+
 .display {
   display: flex;
   background-color: gray;
@@ -15,13 +22,11 @@
   justify-content: flex-end;
 }
 
-.panel-button {
-  display: flex;
-}
-
-.app {
+.button-panel {
   display: flex;
   flex-direction: column;
-  width: 700px;
-  margin: 10rem auto;
+}
+
+.button-panel div {
+  height: 100px;
 }
