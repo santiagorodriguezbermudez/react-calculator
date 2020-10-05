@@ -30,3 +30,16 @@
 .button-panel div {
   height: 100px;
 }
+
+.button-panel button {
+  width: 25%;
+  text-align: center;
+  color: black;
+  border: 1px lightgray solid;
+  height: 100%;
+  font-size: 1.3rem;
+}
+
+.button-panel div:nth-child(5) button:nth-child(1) {
+  width: 50%;
+}
