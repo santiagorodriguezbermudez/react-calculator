@@ -10,7 +10,17 @@ function ButtonPanel() {
     ['0', '.', '='],
   ];
 
-  const listedButton = (btn => btn.map(button => <Button key={button} buttonName={button} />));
+  const listedButton = (btnGroup => btnGroup.map(button => {
+    let buttonComponent;
+    if (['÷', 'X', '-', '+'].includes(button)) {
+      buttonComponent = <Button buttonName={button} />;
+    } else if (button === '0') {
+      buttonComponent = <Button buttonName={button} buttonColor="#E0E0E0" buttonWide />;
+    } else {
+      buttonComponent = <Button buttonName={button} buttonColor="#E0E0E0" />;
+    }
+    return buttonComponent;
+  }));
 
   const listedArray = symbolArray.map(group => <div key={group[0]}>{listedButton(group)}</div>);
 
