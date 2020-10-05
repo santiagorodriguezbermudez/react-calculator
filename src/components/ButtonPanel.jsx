@@ -2,39 +2,20 @@ import React from 'react';
 import Button from './Button';
 
 function ButtonPanel() {
-  return (
-    <div className="button-panel">
-      <div id="group1">
-        <Button name="AC" />
-        <Button name="+/-" />
-        <Button name="%" />
-        <Button name="÷" />
-      </div>
-      <div id="group2">
-        <Button name="7" />
-        <Button name="8" />
-        <Button name="9" />
-        <Button name="X" />
-      </div>
-      <div id="group3">
-        <Button name="4" />
-        <Button name="5" />
-        <Button name="6" />
-        <Button name="-" />
-      </div>
-      <div id="group4">
-        <Button name="1" />
-        <Button name="2" />
-        <Button name="3" />
-        <Button name="+" />
-      </div>
-      <div id="group5">
-        <Button name="0" />
-        <Button name="." />
-        <Button name="=" />
-      </div>
+  const symbolArray = [
+    ['AC', '+/-', '%', '÷'],
+    ['7', '8', '9', 'X'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '='],
+  ];
 
-    </div>
+  const listedButton = (btn => btn.map(button => <Button key={button} buttonName={button} />));
+
+  const listedArray = symbolArray.map(group => <div key={group[0]}>{listedButton(group)}</div>);
+
+  return (
+    <div className="button-panel">{listedArray}</div>
   );
 }
 
