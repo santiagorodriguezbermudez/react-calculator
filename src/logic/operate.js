@@ -19,7 +19,7 @@ const Operate = ((numberOne, numberTwo, operation) => {
       result = numberTwo === '0' ? 'undefined' : numberOne.div(numberTwo);
       break;
     case '%':
-      result = numberOne.div(100);
+      result = numberOne.mul(numberTwo).div(100);
       break;
     case '+/-':
       result = numberOne.mul(-1);
@@ -27,6 +27,8 @@ const Operate = ((numberOne, numberTwo, operation) => {
     default:
       result = 'undefined';
   }
+
+  result = result === 'undefined' ? result : result.toString();
 
   return {
     result,
