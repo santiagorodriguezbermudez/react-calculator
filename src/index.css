@@ -1,3 +1,41 @@
 * {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: 10rem auto;
+}
+
+.display {
+  display: flex;
+  background-color: gray;
+  height: 100px;
+  font-weight: bold;
+  color: white;
+  padding: 2rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 3rem;
+}
+
+.button-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-panel div {
+  height: 100px;
+}
+
+.button-panel button {
+  text-align: center;
+  color: black;
+  border: 1px lightgray solid;
+  height: 100%;
+  font-size: 2rem;
 }

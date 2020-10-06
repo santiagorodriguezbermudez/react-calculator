@@ -2,7 +2,7 @@
 
 Building a Calculator app using React js
 
-![screenshot]()
+![screenshot](./src/assets/images/screenshot.png)
 
 ## Built With
 
