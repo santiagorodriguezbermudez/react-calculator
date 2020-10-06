@@ -49,6 +49,6 @@ const Calculate = ((calculatorObject, buttonName) => {
     next,
     operation,
   };
-})();
+});
 
 export default Calculate;

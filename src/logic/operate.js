@@ -33,6 +33,6 @@ const Operate = ((numberOne, numberTwo, operation) => {
   return {
     result,
   };
-})();
+});
 
 export default Operate;
