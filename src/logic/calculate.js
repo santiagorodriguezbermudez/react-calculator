@@ -14,20 +14,34 @@ const Calculate = ((calculatorObject, buttonName) => {
       next = next ? Operate(next, '1', '+/-') : next;
       break;
     case (/[x,+,÷,\-,%]/.test(buttonName)):
-      next = next ? Operate(total, next, operation) : next;
-      total = total ? Operate(total, next, operation) : total;
+      if (operation) {
+        total = Operate(total, next, operation) === 'undefined' ? 'Error: Div by 0' : Operate(total, next, operation);
+        next = null;
+        operation = buttonName;
+      } else {
+        operation = buttonName;
+      }
       break;
     case '.':
-      next = next ? next + buttonName : '0.';
-      total = total ? total + buttonName : '0.';
+      if (operation) {
+        next = next ? next + buttonName : '0.';
+      } else {
+        total = total ? total + buttonName : '0.';
+      }
       break;
     case '=':
-      total = total ? Operate(total, next, operation) : total;
-      next = null;
-      operation = null;
+      if (operation && next) {
+        total = total ? Operate(total, next, operation) : total;
+        next = null;
+        operation = null;
+      }
       break;
     default:
-      next = next ? next + buttonName : buttonName;
+      if (operation) {
+        next = next ? next + buttonName : buttonName;
+      } else {
+        total = total ? total + buttonName : buttonName;
+      }
   }
 
   return {
