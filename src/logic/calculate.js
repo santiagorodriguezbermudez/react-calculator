@@ -2,6 +2,9 @@ import Operate from './operate';
 
 const Calculate = ((calculatorObject, buttonName) => {
   let { total, next, operation } = calculatorObject;
+  console.log(`This is the total: ${total}`);
+  console.log(`This is the next: ${next}`);
+  console.log(`This is the operation: ${operation}`);
 
   switch (buttonName) {
     case 'A/C':

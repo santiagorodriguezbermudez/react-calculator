@@ -18,12 +18,18 @@ function Button(props) {
   };
 
   const handleClick = (buttonName => {
-    console.log(buttonName);
     return clickHandler(buttonName);
   });
 
   return (
-    <button value={buttonName} onClick={e => handleClick(e.target.value)} style={styles(buttonWide, buttonColor)} type="submit">{ buttonName }</button>
+    <button
+      value={buttonName}
+      onClick={e => handleClick(e.target.value)}
+      style={styles(buttonWide, buttonColor)}
+      type="submit"
+    >
+      { buttonName }
+    </button>
   );
 }
 
