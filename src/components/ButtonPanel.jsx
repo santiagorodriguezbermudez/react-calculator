@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from './Button';
+import PropTypes from 'prop-types';
 
-function ButtonPanel() {
+function ButtonPanel(props) {
   const symbolArray = [
     ['AC', '+/-', '%', '÷'],
     ['7', '8', '9', 'x'],
@@ -10,14 +11,16 @@ function ButtonPanel() {
     ['0', '.', '='],
   ];
 
+  const handleClick = (buttonName => props.clickHandler(buttonName));
+
   const listedButton = (btnGroup => btnGroup.map(button => {
     let buttonComponent;
     if (['÷', 'x', '-', '+', '='].includes(button)) {
-      buttonComponent = <Button buttonName={button} />;
+      buttonComponent = <Button clickHandler={handleClick} buttonName={button} />;
     } else if (button === '0') {
-      buttonComponent = <Button buttonName={button} buttonColor="#E0E0E0" buttonWide />;
+      buttonComponent = <Button clickHandler={handleClick} buttonName={button} buttonColor="#E0E0E0" buttonWide />;
     } else {
-      buttonComponent = <Button buttonName={button} buttonColor="#E0E0E0" />;
+      buttonComponent = <Button clickHandler={handleClick} buttonName={button} buttonColor="#E0E0E0" />;
     }
     return buttonComponent;
   }));
@@ -28,5 +31,9 @@ function ButtonPanel() {
     <div className="button-panel">{listedArray}</div>
   );
 }
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;
