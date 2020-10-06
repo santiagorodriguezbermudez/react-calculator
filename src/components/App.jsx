@@ -15,7 +15,6 @@ class App extends React.Component {
   }
 
   handleClick(buttonName) {
-    // console.log(`This is the buttonName on App component: ${buttonName}`);
     const newData = Calculate(this.state, buttonName);
     this.setState(newData);
   }

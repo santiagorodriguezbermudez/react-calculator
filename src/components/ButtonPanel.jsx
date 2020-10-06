@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Button from './Button';
-import PropTypes from 'prop-types';
 
 function ButtonPanel(props) {
   const symbolArray = [
