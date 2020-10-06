@@ -16,11 +16,11 @@ function ButtonPanel(props) {
   const listedButton = (btnGroup => btnGroup.map(button => {
     let buttonComponent;
     if (['÷', 'x', '-', '+', '='].includes(button)) {
-      buttonComponent = <Button clickHandler={handleClick} buttonName={button} />;
+      buttonComponent = <Button key={button} clickHandler={handleClick} buttonName={button} />;
     } else if (button === '0') {
-      buttonComponent = <Button clickHandler={handleClick} buttonName={button} buttonColor="#E0E0E0" buttonWide />;
+      buttonComponent = <Button key={button} clickHandler={handleClick} buttonName={button} buttonColor="#E0E0E0" buttonWide />;
     } else {
-      buttonComponent = <Button clickHandler={handleClick} buttonName={button} buttonColor="#E0E0E0" />;
+      buttonComponent = <Button key={button} clickHandler={handleClick} buttonName={button} buttonColor="#E0E0E0" />;
     }
     return buttonComponent;
   }));
