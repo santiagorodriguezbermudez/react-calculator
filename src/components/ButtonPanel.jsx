@@ -4,7 +4,7 @@ import Button from './Button';
 function ButtonPanel() {
   const symbolArray = [
     ['AC', '+/-', '%', '÷'],
-    ['7', '8', '9', 'X'],
+    ['7', '8', '9', 'x'],
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
     ['0', '.', '='],
@@ -12,7 +12,7 @@ function ButtonPanel() {
 
   const listedButton = (btnGroup => btnGroup.map(button => {
     let buttonComponent;
-    if (['÷', 'X', '-', '+'].includes(button)) {
+    if (['÷', 'x', '-', '+', '='].includes(button)) {
       buttonComponent = <Button buttonName={button} />;
     } else if (button === '0') {
       buttonComponent = <Button buttonName={button} buttonColor="#E0E0E0" buttonWide />;
