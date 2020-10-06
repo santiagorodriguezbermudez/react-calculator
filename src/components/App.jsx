@@ -1,7 +1,6 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-// eslint-disable-next-line no-unused-vars
 import Calculate from '../logic/calculate';
 
 class App extends React.Component {
@@ -21,10 +20,12 @@ class App extends React.Component {
   }
 
   render() {
+    const { total, next } = this.state;
+
     return (
       <div className="app">
-        <Display />
-        <ButtonPanel />
+        <Display result={next || total} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
