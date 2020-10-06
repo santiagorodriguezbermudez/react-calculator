@@ -10,17 +10,19 @@ const Calculate = ((calculatorObject, buttonName) => {
       operation = null;
       break;
     case '+/-':
-      total = total ? total * -1 : total;
-      next = next ? next * -1 : next;
+      total = total ? Operate(total, '1', '+/-') : total;
+      next = next ? Operate(next, '1', '+/-') : next;
       break;
     case (/[x,+,÷,\-,%]/.test(buttonName)):
-      // Use operate
+      next = next ? Operate(total, next, operation) : next;
+      total = total ? Operate(total, next, operation) : total;
       break;
     case '.':
-      next = next ? next + buttonName : buttonName;
+      next = next ? next + buttonName : '0.';
+      total = total ? total + buttonName : '0.';
       break;
     case '=':
-      total = total ? 0 : total;
+      total = total ? Operate(total, next, operation) : total;
       next = null;
       operation = null;
       break;
