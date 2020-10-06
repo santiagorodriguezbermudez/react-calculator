@@ -2,11 +2,6 @@ import Operate from './operate';
 
 const Calculate = ((calculatorObject, buttonName) => {
   let { total, next, operation } = calculatorObject;
-  console.log(`This is the total: ${total}`);
-  console.log(`This is the next: ${next}`);
-  console.log(`This is the operation: ${operation}`);
-  console.log(`Button name: ${buttonName}`);
-  console.log(`Button name type: ${typeof buttonName}`);
 
   switch (buttonName) {
     case 'AC':
@@ -47,7 +42,6 @@ const Calculate = ((calculatorObject, buttonName) => {
       }
       break;
     default:
-      console.log('default option');
       if (operation) {
         next = next ? next + buttonName : buttonName;
       } else {

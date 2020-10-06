@@ -27,8 +27,6 @@ const Operate = ((numberOne, numberTwo, operation) => {
     default:
       result = 'undefined';
   }
-
-  // result = result === 'undefined' ? result : result.toString();
   return result.toString();
 });
 
