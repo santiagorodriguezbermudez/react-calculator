@@ -16,23 +16,18 @@ const Operate = ((numberOne, numberTwo, operation) => {
       result = bigOne.mul(bigTwo);
       break;
     case '÷':
-      result = numberTwo === '0' ? 'undefined' : numberOne.div(numberTwo);
+      result = bigTwo.toString() === '0' ? 'undefined' : bigOne.div(bigTwo);
       break;
     case '%':
-      result = numberOne.mul(numberTwo).div(100);
+      result = bigOne.div(100);
       break;
     case '+/-':
-      result = numberOne.mul(-1);
+      result = bigOne.mul(-1);
       break;
     default:
       result = 'undefined';
   }
-
-  result = result === 'undefined' ? result : result.toString();
-
-  return {
-    result,
-  };
-})();
+  return result.toString();
+});
 
 export default Operate;
