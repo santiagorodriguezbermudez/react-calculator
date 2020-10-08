@@ -17,9 +17,7 @@ function Button(props) {
     });
   };
 
-  const handleClick = (buttonName => {
-    return clickHandler(buttonName);
-  });
+  const handleClick = (buttonName => clickHandler(buttonName));
 
   return (
     <button
